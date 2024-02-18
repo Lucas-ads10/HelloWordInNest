@@ -1,73 +1,41 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+HelloWord Application
+Bem-vindo à HelloWord Application! 🚀
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+Esta é a sua primeira aplicação, onde você pode registrar seu nome, telefone e idade. A HelloWord Application é um projeto simples, mas emocionante, que demonstra como criar uma aplicação completa utilizando Nest, Prisma, PostgreSQL, React, Axios e TypeScript. Vamos começar a construir!
 
-## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Visão Geral
+A HelloWord Application é um aplicativo de registro de informações básicas do usuário. Ele permite que os usuários insiram seu nome, telefone e idade, armazenando essas informações em um banco de dados PostgreSQL. O frontend permite aos usuários interagir facilmente com o aplicativo e visualizar os dados que eles inseriram.
 
-## Installation
 
-```bash
-$ npm install
-```
+Tecnologias Utilizadas
+Nest: Um framework para construir aplicativos web escaláveis e eficientes em Node.js.
+Prisma: Um ORM (Object-Relational Mapper) moderno e seguro para banco de dados PostgreSQL, MySQL e SQLite.
+PostgreSQL: Um sistema de gerenciamento de banco de dados relacional poderoso e de código aberto.
+React: Uma biblioteca JavaScript para criar interfaces de usuário interativas e dinâmicas.
+Axios: Um cliente HTTP baseado em promises para fazer requisições AJAX no navegador e Node.js.
+TypeScript: Um superset tipado de JavaScript que adiciona tipos estáticos opcionais à linguagem.
+Configuração do Projeto
 
-## Running the app
 
-```bash
-# development
-$ npm run start
+Siga estas etapas para configurar e executar o projeto em sua máquina local:
 
-# watch mode
-$ npm run start:dev
+Clonar o Repositório: Clone este repositório para sua máquina local utilizando o comando git clone.
 
-# production mode
-$ npm run start:prod
-```
+Instalar Dependências: Navegue até o diretório do projeto e instale as dependências do backend e frontend executando npm install ou yarn install em ambos os diretórios backend e frontend.
 
-## Test
+Configurar o Banco de Dados: Certifique-se de ter o PostgreSQL instalado em sua máquina. Crie um banco de dados e configure as credenciais de acesso no arquivo .env do diretório backend.
 
-```bash
-# unit tests
-$ npm run test
+Executar o Backend: No diretório backend, execute o comando npm start ou yarn start para iniciar o servidor Nest.
 
-# e2e tests
-$ npm run test:e2e
+Executar o Frontend: No diretório frontend, execute o comando npm start ou yarn start para iniciar o servidor de desenvolvimento React.
 
-# test coverage
-$ npm run test:cov
-```
+Acessar a Aplicação: Abra seu navegador e acesse http://localhost:3000 para visualizar a HelloWord Application em ação!
 
-## Support
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+Contribuindo
+Se você gostaria de contribuir para a HelloWord Application, fique à vontade para abrir issues, enviar pull requests ou discutir ideias para melhorias. Sua colaboração é bem-vinda e valorizada!
 
-## Stay in touch
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+Espero que você aproveite explorando a HelloWord Application e aprendendo mais sobre o desenvolvimento web moderno com Nest, Prisma, PostgreSQL, React, Axios e TypeScript. Se você tiver alguma dúvida ou sugestão, não hesite em entrar em contato! 😊🌟
