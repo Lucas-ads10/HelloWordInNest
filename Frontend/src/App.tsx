@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
 import './App.css';
+import axios from 'axios';
 
 type Estado = {
-  nome: string;
-  idade: number;
-  telefone: string;
+  name: string;
+  age: number;
+  telephone: string;
 };
 
 const App: React.FC = () => {
   const [estado, setEstado] = useState<Estado>({
-    nome: '',
-    idade: 0,
-    telefone: '',
+    name: '',
+    age: 0,
+    telephone: '',
   });
 
   const atualizarEstado = (campo: string, valor: string | number) => {
@@ -22,9 +23,20 @@ const App: React.FC = () => {
   };
 
   const exibirValores = () => {
-    console.log("Nome:", estado.nome);
-    console.log("Idade:", estado.idade);
-    console.log("Telefone:", estado.telefone);
+    console.log("Nome:", estado.name);
+    console.log("Idade:", estado.age);
+    console.log("Telefone:", estado.telephone);
+  };
+
+  const enviarDadosParaBackend = async () => {
+    try {
+      const response = await axios.post('http://localhost:3000/user', estado);
+      console.log('Resposta do servidor:', response.data);
+      // Aqui você pode tratar a resposta do servidor, se necessário
+    } catch (error) {
+      console.error('Ocorreu um erro ao enviar os dados para o servidor:', error);
+      // Aqui você pode tratar o erro, se necessário
+    }
   };
 
   return (
@@ -35,27 +47,27 @@ const App: React.FC = () => {
           <label>Nome:</label>
           <input
             type="text"
-            value={estado.nome}
-            onChange={(e) => atualizarEstado('nome', e.target.value)}
+            value={estado.name}
+            onChange={(e) => atualizarEstado('name', e.target.value)}
           />
         </div>
         <div className="form-group">
           <label>Idade:</label>
           <input
             type="number"
-            value={estado.idade === 0 ? '' : estado.idade}
-            onChange={(e) => atualizarEstado('idade', parseInt(e.target.value))}
+            value={estado.age === 0 ? '' : estado.age}
+            onChange={(e) => atualizarEstado('age', parseInt(e.target.value))}
           />
         </div>
         <div className="form-group">
           <label>Telefone:</label>
           <input
             type="text"
-            value={estado.telefone}
-            onChange={(e) => atualizarEstado('telefone', e.target.value)}
+            value={estado.telephone}
+            onChange={(e) => atualizarEstado('telephone', e.target.value)}
           />
         </div>
-        <button onClick={exibirValores}>Exibir Valores</button>
+        <button onClick={enviarDadosParaBackend}>Enviar Dados</button>
       </div>
     </div>
   );

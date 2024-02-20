@@ -16,7 +16,8 @@ export class UserService {
         name: data.name,
         age: data.age,
         telephone: data.telephone,
-      },
+      }
     });
   }
+  
 }
