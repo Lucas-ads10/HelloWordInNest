@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Delete, Put } from '@nestjs/common';
 import { UserService } from './user.service';
 import { UserDto } from './dto/user.dto';
 
@@ -11,10 +11,26 @@ export class UserController {
     return await this.userService.getUsers();
   }
 
+  @Get(':id')
+  async getUserById(@Param('id') id: string) {
+    return await this.userService.getUserById(id);
+  }
+
   @Post()
   async createUser(@Body() userDto: UserDto) {
     return await this.userService.createUser(userDto);
   }
+
+  @Delete(':id')
+  async deleteUser(@Param('id') id: string) {
+    return await this.userService.deleteUser(id);
+  }
+
+  @Put(':id')
+  async updateUser(@Param('id') id: string, @Body() userDto: UserDto) {
+    return await this.userService.updateUser(id, userDto);
+  }
 }
+
 
 //Criar a rota que vai receber os dados do usuario// 
