@@ -2,35 +2,29 @@ import React, { useState } from 'react';
 import './App.css';
 import axios from 'axios';
 
-type Estado = {
+type State = {
   name: string;
   age: number;
   telephone: string;
 };
 
 const App: React.FC = () => {
-  const [estado, setEstado] = useState<Estado>({
+  const [state, setState] = useState<State>({
     name: '',
     age: 0,
     telephone: '',
   });
 
-  const atualizarEstado = (campo: string, valor: string | number) => {
-    setEstado({
-      ...estado,
-      [campo]: valor,
+  const updateStatus = (field: string, value: string | number) => {
+    setState({
+      ...state,
+      [field]: value,
     });
   };
 
-  const exibirValores = () => {
-    console.log("Nome:", estado.name);
-    console.log("Idade:", estado.age);
-    console.log("Telefone:", estado.telephone);
-  };
-
-  const enviarDadosParaBackend = async () => {
+  const sendDataToTheBackend = async () => {
     try {
-      const response = await axios.post('http://localhost:3000/user', estado);
+      const response = await axios.post('http://localhost:3000/user', state);
       console.log('Resposta do servidor:', response.data);
       // Aqui você pode tratar a resposta do servidor, se necessário
     } catch (error) {
@@ -47,27 +41,27 @@ const App: React.FC = () => {
           <label>Nome:</label>
           <input
             type="text"
-            value={estado.name}
-            onChange={(e) => atualizarEstado('name', e.target.value)}
+            value={state.name}
+            onChange={(e) => updateStatus('name', e.target.value)}
           />
         </div>
         <div className="form-group">
           <label>Idade:</label>
           <input
             type="number"
-            value={estado.age === 0 ? '' : estado.age}
-            onChange={(e) => atualizarEstado('age', parseInt(e.target.value))}
+            value={state.age === 0 ? '' : state.age}
+            onChange={(e) => updateStatus('age', parseInt(e.target.value))}
           />
         </div>
         <div className="form-group">
           <label>Telefone:</label>
           <input
             type="text"
-            value={estado.telephone}
-            onChange={(e) => atualizarEstado('telephone', e.target.value)}
+            value={state.telephone}
+            onChange={(e) => updateStatus('telephone', e.target.value)}
           />
         </div>
-        <button onClick={enviarDadosParaBackend}>Enviar Dados</button>
+        <button onClick={sendDataToTheBackend}>Enviar Dados</button>
       </div>
     </div>
   );
